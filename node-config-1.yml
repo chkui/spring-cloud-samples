@@ -1,3 +1,1 @@
-server:
-	port: 8081
-message: Response Node 1!
+message: Response Node Client1
