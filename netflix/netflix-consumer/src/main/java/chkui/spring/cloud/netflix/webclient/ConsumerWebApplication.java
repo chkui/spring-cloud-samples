@@ -1,7 +1,11 @@
 package chkui.spring.cloud.netflix.webclient;
 
+import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,21 +18,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.discovery.EurekaClient;
 
+
 @EnableEurekaClient
 @RestController
 @SpringBootApplication
 public class ConsumerWebApplication implements ApplicationListener<EmbeddedServletContainerInitializedEvent> {
+	private static Logger logger = LoggerFactory.getLogger(ConsumerWebApplication.class);
 	
 	@Autowired
 	private EurekaClient eurkaClient;
+
+	private static EmbeddedServletContainerInitializedEvent event;
 	
 	@RequestMapping(value = "/knownService",method = RequestMethod.GET)
     public Set<String> home() {
 		Set<String> s = eurkaClient.getAllKnownRegions();
         return s;
     }
-
-	private static EmbeddedServletContainerInitializedEvent event;
 
     @Override
     public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
@@ -42,6 +48,14 @@ public class ConsumerWebApplication implements ApplicationListener<EmbeddedServl
     }
 	
     public static void main(String[] args) {
-		SpringApplication.run(ConsumerWebApplication.class, args);
+		try {
+			ServerSocket serverSocket = new ServerSocket(0); //自动探索一个端口
+			int port = serverSocket.getLocalPort();
+	    	System.setProperty("server.port", String.valueOf(port));
+	    	serverSocket.close();
+			SpringApplication.run(ConsumerWebApplication.class, args);
+		} catch (IOException e) {
+			logger.error("服务启动异常，获取端口错误!", e);
+		}
     }
 }

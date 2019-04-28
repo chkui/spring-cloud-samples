@@ -1,9 +1,9 @@
 server:
   port: 8761 #注册服务端口
-
-eureka:
+eureka: 
   client:
     registerWithEureka: false
     fetchRegistry: false
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false #eureka服务端保护模式，当客户端大面积丢失时不会移除这些客户端的注册信息。当设置此选项为false时候，当出现网络故障，会出现服务雪崩导致Eureka无法提供服务的问题
