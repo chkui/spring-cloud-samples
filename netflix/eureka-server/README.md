@@ -1,13 +1,14 @@
-**spring eureka µÄÅäÖÃÖÚ¶à£¬½á¹¹ÉÏ·ÖÎªËÄ¸ö²¿·Ö** 
+**spring eureka çš„é…ç½®ä¼—å¤šï¼Œç»“æ„ä¸Šåˆ†ä¸ºå››ä¸ªéƒ¨åˆ†** 
 
-1. instance£º¶Ôµ¥¸öÊµÀıµÄ¿ØÖÆ£¬ÔÚ¿Í»§¶Ë½øĞĞÅäÖÃ.
-2. client:¿Í»§¶ËµÄÉèÖÃ¡£ÔÚ¿Í»§¶Ë½øĞĞÅäÖÃ.
-3. server:·şÎñ¶ËÅäÖÃ£¬Óë·şÎñ¶ËÌá¹©µÄÄÚÈİÏà¹Ø¡£ÔÚeureka·şÎñÆ÷½øĞĞÅäÖÃ.
-4. dashboard:¿ÉÊÓ»¯ÒÇ±íÅÌÏà¹ØµÄÅäÖÃ
+1. instanceï¼šå¯¹å•ä¸ªå®ä¾‹çš„æ§åˆ¶ï¼Œåœ¨å®¢æˆ·ç«¯è¿›è¡Œé…ç½®.
+2. client:å®¢æˆ·ç«¯çš„è®¾ç½®ã€‚åœ¨å®¢æˆ·ç«¯è¿›è¡Œé…ç½®.
+3. server:æœåŠ¡ç«¯é…ç½®ï¼Œä¸æœåŠ¡ç«¯æä¾›çš„å†…å®¹ç›¸å…³ã€‚åœ¨eurekaæœåŠ¡å™¨è¿›è¡Œé…ç½®.
+4. dashboard:å¯è§†åŒ–ä»ªè¡¨ç›˜ç›¸å…³çš„é…ç½®
 
-**eurekaµÄ¹Ù·½ÅäÖÃÎÄ¼şÃ»ÓĞÕÒµ½£¬ÒÔÏÂÄÚÈİÀ´×ÔÓÚgithubµÄÔ´Âë¡¢wikiÒÔ¼°»¥ÁªÍø**
-1. ¹Ù·½wiki¹ØÓÚÅäÖÃµÄËµÃ÷£ºhttps://github.com/Netflix/eureka/wiki/Configuring-Eureka.
-2. eurekaÓĞ¶ÀÁ¢µÄinstanceºÍclientÅäÖÃ£¬µ«ÊÇÃ»ÓĞÕÒµ½·şÎñ¶ËÅäÖÃ£¬ÎÄµµµÄÒâË¼ÊÇ·şÎñ¶ËÅäÖÃÊÇ¸ù¾İclient¶ø¶ÀÁ¢·şÎñµÄ¡£
-1. clientConfigÔ´Âë£ºhttps://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/appinfo/EurekaInstanceConfig.java
-1. instanceConfigÔ´ÂëÂë£ºhttps://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/discovery/EurekaClientConfig.java
-1. spring eurekaÖĞÎÄ²Î¿¼×ÊÁÏ£ºhttps://www.cnblogs.com/tiancai/p/9593648.html
+**eurekaçš„å®˜æ–¹é…ç½®æ–‡ä»¶æ²¡æœ‰æ‰¾åˆ°ï¼Œä»¥ä¸‹å†…å®¹æ¥è‡ªäºgithubçš„æºç ã€wikiä»¥åŠäº’è”ç½‘**
+
+1. å®˜æ–¹wikiå…³äºé…ç½®çš„è¯´æ˜ï¼šhttps://github.com/Netflix/eureka/wiki/Configuring-Eureka.
+1. eurekaæœ‰ç‹¬ç«‹çš„instanceå’Œclienté…ç½®ï¼Œä½†æ˜¯æ²¡æœ‰æ‰¾åˆ°æœåŠ¡ç«¯é…ç½®ï¼Œæ–‡æ¡£çš„æ„æ€æ˜¯æœåŠ¡ç«¯é…ç½®æ˜¯æ ¹æ®clientè€Œç‹¬ç«‹æœåŠ¡çš„ã€‚
+1. clientConfigæºç ï¼šhttps://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/appinfo/EurekaInstanceConfig.java
+1. instanceConfigæºç ç ï¼šhttps://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/discovery/EurekaClientConfig.java
+1. spring eurekaä¸­æ–‡å‚è€ƒèµ„æ–™ï¼šhttps://www.cnblogs.com/tiancai/p/9593648.html
