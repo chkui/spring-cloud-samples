@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,7 @@ import chkui.spring.cloud.netflix.configuration.ProducerConfiguration;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableFeignClients
+@ComponentScan({"chkui.spring.cloud.evolution.interfaces"})
 public class ProducerApplication {
 	Logger logger = LoggerFactory.getLogger(ProducerApplication.class);
 	
