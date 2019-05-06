@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "getOrder",
+    "description": "获取订单信息",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "订单的无符号编号",
+            "type": "integer"
+        },
+        "msg": {
+            "description": "当前订单的信息",
+            "type": "string"
+        },
+        "port": {
+            "description": "当前提供服务的接口",
+            "type": "integer"
+        }
+    },
+    "required": ["id", "msg"]
+}

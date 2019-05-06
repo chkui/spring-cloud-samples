@@ -1,0 +1,8 @@
+#这个配置用于sprin-cloud-config-server
+
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}

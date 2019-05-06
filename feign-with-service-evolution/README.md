@@ -1,5 +1,12 @@
 # Feign用于Service接口管理
 
+## 使用注意
+由于没有建立gradle的子父级依赖，所以对service工程的依赖必须手动添加依赖。
+
+>Eclipse：
+
+>右键工程->Properties->Java Build Path->Libraries->Add Class Folder。然后选择evolution-facade工程的bin目录。
+
 ## 接口维护问题
 
 Feign通过一组注解快速实现接口调用。通常情况下接口的维护涉及2个问题：
