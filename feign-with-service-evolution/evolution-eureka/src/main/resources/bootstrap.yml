@@ -1,3 +1,5 @@
+#这个配置用于sprin-cloud-config-server
+
 spring:
   application:
     name: eureka-server

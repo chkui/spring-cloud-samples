@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import chkui.spring.cloud.evolution.configuration.ProducerConfiguration;
 import chkui.spring.cloud.evolution.entity.OrderBase;
-import chkui.spring.cloud.evolution.interfaces.OrderInterface;
+import chkui.spring.cloud.evolution.interfaces.Order;
 
 @EnableEurekaClient
 @SpringBootApplication
@@ -39,7 +39,7 @@ class InnerConfiguration{
 class ProducerController {
 	
 	@Autowired
-	private OrderInterface orderInferface;
+	private Order orderInferface;
 
 	@GetMapping("/test")
 	public String test() {

@@ -1,25 +1,27 @@
 package chkui.spring.cloud.evolution.entity;
 
 /**
- * ¶©µ¥ĞÅÏ¢£¬ÓÃÓÚ´æ·Å¶©µ¥µÄÏà¹ØÊı¾İ
- * @author ³Â¿û
+ * è®¢å•çš„åŸºç¡€ç»“æ„ç±»
+ * @author chkui
  *
  */
 public class OrderBase {
 	/**
-	 * ¶©µ¥ID
+	 * è®¢å•ID
 	 */
 	private long id;
 	
 	/**
-	 * ¶©µ¥ĞÅÏ¢
+	 * è®¢å•æ¶ˆæ¯
 	 */
 	private String msg;
 	
 	/**
-	 * ·şÎñ¶Ë¿Ú
+	 * æœåŠ¡ç«¯å£
 	 */
 	private int port;
+	
+	private String extMsg;
 
 	public long getId() {
 		return id;
@@ -43,5 +45,13 @@ public class OrderBase {
 
 	public void setPort(int port) {
 		this.port = port;
+	}
+
+	public String getExtMsg() {
+		return extMsg;
+	}
+
+	public void setExtMsg(String extMsg) {
+		this.extMsg = extMsg;
 	}
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import chkui.spring.cloud.evolution.entity.OrderBase;
 
+
 @EnableEurekaClient
 @SpringBootApplication
 public class ConsumerWebApplication{
@@ -51,6 +52,7 @@ class ConsumerController {
 		order.setId(id);
 		order.setMsg("It's a test Order");
 		order.setPort(localInstance.getPort());
+		order.setExtMsg("Add msg");
         return order;
     }
 }

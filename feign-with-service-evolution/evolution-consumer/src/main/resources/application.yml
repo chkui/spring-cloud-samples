@@ -2,13 +2,14 @@ server:
   port: ${server.port}
 spring:
   application: 
-    name: eureka-consumer
+    name: evolution-consumer
+    
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    appName: coumser # 当设置appName后，服务名称以这个为准，会覆盖Spring.application.name，
+    appName: ${spring.application.name} # 当设置appName后，服务名称以这个为准，会覆盖Spring.application.name，
     instanceId: ${eureka.instance.appName}-port:${server.port}
     lease-renewal-interval-in-seconds: 1 
     lease-expiration-duration-in-seconds: 2
