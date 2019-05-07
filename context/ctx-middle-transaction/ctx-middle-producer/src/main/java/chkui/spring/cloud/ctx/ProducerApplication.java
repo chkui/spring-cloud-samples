@@ -1,4 +1,4 @@
-package chkui.spring.cloud.evolution;
+package chkui.spring.cloud.ctx;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import chkui.spring.cloud.ctx.user.entity.User;
+import chkui.spring.cloud.ctx.user.interfaces.UserInterface;
 import chkui.spring.cloud.evolution.configuration.ProducerConfiguration;
-import chkui.spring.cloud.evolution.entity.OrderBase;
-import chkui.spring.cloud.evolution.interfaces.Order;
 
 @EnableEurekaClient
 @SpringBootApplication
@@ -36,18 +36,20 @@ class InnerConfiguration{
 }
 
 @RestController
+@RequestMapping(value = "/api/pay/")
 class ProducerController {
 	
 	@Autowired
-	private Order orderInferface;
+	private UserInterface userInterface;
 
 	@GetMapping("/test")
 	public String test() {
 		return "test";
 	}
 	
-	@RequestMapping(value = "/order/{id}",method = RequestMethod.GET)
-    public OrderBase getOrderInfo(@PathVariable("id")Long id) {
-        return orderInferface.getOrder(id);
+	@RequestMapping(value = "/scan-code/{snCode}",method = RequestMethod.GET)
+    public String getOrderInfo(@PathVariable("snCode")String snCode) {
+		User user = userInterface.getUserBySnCode(snCode);
+        return "123";
     }
 }

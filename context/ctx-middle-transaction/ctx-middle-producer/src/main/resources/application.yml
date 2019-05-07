@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: evolution-producer
+    name: ctx-middle-producer
 
 eureka:
   client:

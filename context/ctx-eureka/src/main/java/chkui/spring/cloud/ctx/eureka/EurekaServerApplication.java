@@ -1,4 +1,4 @@
-package chkui.spring.cloud.eureka.server;
+package chkui.spring.cloud.ctx.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
