@@ -20,6 +20,8 @@ public class OrderDivided implements Serializable {
 	private DividedType type;
 	
 	private float param;
+	
+	public OrderDivided() {}
 
 	public OrderDivided(long relateUser, DividedType type, float param) {
 		super();

@@ -14,6 +14,8 @@ public class Account implements Serializable {
 	
 	private String des;
 
+	public Account() {}
+	
 	public Account(String code, String des) {
 		super();
 		this.code = code;

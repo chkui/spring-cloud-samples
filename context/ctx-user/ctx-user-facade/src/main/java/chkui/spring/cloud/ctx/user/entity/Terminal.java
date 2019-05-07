@@ -13,6 +13,8 @@ public class Terminal implements Serializable  {
 	private String address;
 	
 	private long proxyUserId;
+	
+	public Terminal() {}
 
 	public Terminal(String snCode, String address, long proxyUserId) {
 		super();

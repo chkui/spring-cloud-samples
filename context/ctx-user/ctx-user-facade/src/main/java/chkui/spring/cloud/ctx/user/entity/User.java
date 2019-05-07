@@ -23,25 +23,14 @@ public class User implements Serializable  {
 	
 	private String des;
 	
-	private Set<Account> accounts;
+	public User() {}
 	
-	private Set<Terminal> terminal;
-	
-	private Set<PayPip> payPip;
-	
-	private Set<OrderDivided> divided;
-	
-	public User(long id, UserType type, String name, String des, Set<Account> accounts, Set<Terminal> terminal,
-			Set<PayPip> payPip, Set<OrderDivided> divided) {
+	public User(long id, UserType type, String name, String des) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.name = name;
 		this.des = des;
-		this.accounts = accounts;
-		this.terminal = terminal;
-		this.payPip = payPip;
-		this.divided = divided;
 	}
 	
 	public long getId() {
@@ -62,34 +51,10 @@ public class User implements Serializable  {
 	public void setDes(String des) {
 		this.des = des;
 	}
-	public Set<Account> getAccounts() {
-		return accounts;
-	}
-	public void setAccounts(Set<Account> accounts) {
-		this.accounts = accounts;
-	}
-	public Set<Terminal> getTerminal() {
-		return terminal;
-	}
-	public void setTerminal(Set<Terminal> terminal) {
-		this.terminal = terminal;
-	}
 	public UserType getType() {
 		return type;
 	}
 	public void setType(UserType type) {
 		this.type = type;
-	}
-	public Set<PayPip> getPayPip() {
-		return payPip;
-	}
-	public void setPayPip(Set<PayPip> payPip) {
-		this.payPip = payPip;
-	}
-	public Set<OrderDivided> getDivided() {
-		return divided;
-	}
-	public void setDivided(Set<OrderDivided> divided) {
-		this.divided = divided;
 	}
 }

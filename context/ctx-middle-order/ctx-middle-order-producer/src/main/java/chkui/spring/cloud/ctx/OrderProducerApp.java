@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import chkui.spring.cloud.ctx.user.entity.User;
+import chkui.spring.cloud.ctx.user.context.UserContext;
 import chkui.spring.cloud.ctx.user.interfaces.UserInterface;
 import chkui.spring.cloud.evolution.configuration.ProducerConfiguration;
 
 @EnableEurekaClient
 @SpringBootApplication
 @EnableFeignClients
-public class ProducerApplication {
-	Logger logger = LoggerFactory.getLogger(ProducerApplication.class);
+public class OrderProducerApp {
+	Logger logger = LoggerFactory.getLogger(OrderProducerApp.class);
 	
     public static void main(String[] args) {
-		SpringApplication.run(ProducerApplication.class, args);
+		SpringApplication.run(OrderProducerApp.class, args);
     }
 }
 
@@ -48,8 +48,8 @@ class ProducerController {
 	}
 	
 	@RequestMapping(value = "/scan-code/{snCode}",method = RequestMethod.GET)
-    public String getOrderInfo(@PathVariable("snCode")String snCode) {
-		User user = userInterface.getUserBySnCode(snCode);
-        return "123";
+    public UserContext getOrderInfo(@PathVariable("snCode")String snCode) {
+		UserContext user = userInterface.getUserBySnCode(snCode);
+        return user;
     }
 }

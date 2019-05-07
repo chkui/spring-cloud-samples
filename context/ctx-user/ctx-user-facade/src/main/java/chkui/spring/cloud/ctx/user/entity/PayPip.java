@@ -26,6 +26,8 @@ public class PayPip implements Serializable{
 		online,
 		uepay
 	}
+	
+	public PayPip() {}
 
 	public PayPip(PipType pipType, String pipCode) {
 		super();

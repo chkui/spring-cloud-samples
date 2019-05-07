@@ -5,30 +5,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import chkui.spring.cloud.ctx.user.context.UserContext;
 import chkui.spring.cloud.ctx.user.entity.User;
 
 /**
- * 订单先关的服务
+ * 璁㈠崟鍏堝叧鐨勬湇鍔�
  * @author chkui
  * 
  */
 @FeignClient("user-consumer")
-
-@RequestMapping(value = "/api/user")
 public interface UserInterface {
 	/**
-	 * 通过Sn编号获取用户信息
-	 * @param id 要获取的订单对应的id
+	 * 閫氳繃Sn缂栧彿鑾峰彇鐢ㄦ埛淇℃伅
+	 * @param id 瑕佽幏鍙栫殑璁㈠崟瀵瑰簲鐨刬d
 	 * @return
 	 */
-	@RequestMapping(value = "/getUser/{snCode}",method = RequestMethod.GET)
-	User getUserBySnCode(@PathVariable("snCode")String snCode);
+	@RequestMapping(value = "/api/user/getUserbySnCode/{snCode}",method = RequestMethod.GET)
+	UserContext getUserBySnCode(@PathVariable("snCode")String snCode);
 
 	/**
-	 * 通过用户id获取用户信息
+	 * 閫氳繃鐢ㄦ埛id鑾峰彇鐢ㄦ埛淇℃伅
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/getUser/{id}",method = RequestMethod.GET)
-	User getUserByUserId(@PathVariable("id")Long id);
+	@RequestMapping(value = "/api/user/getUserByUserId/{id}",method = RequestMethod.GET)
+	UserContext getUserByUserId(@PathVariable("id")Long id);
 }
