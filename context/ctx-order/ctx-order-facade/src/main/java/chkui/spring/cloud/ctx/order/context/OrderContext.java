@@ -1,34 +1,30 @@
 package chkui.spring.cloud.ctx.order.context;
 
-import chkui.spring.cloud.ctx.order.entity.OrderPayPip;
-import chkui.spring.cloud.ctx.order.entity.OrderUser;
-
 public class OrderContext {
-	private OrderUser orderUser;
 	
-	private OrderPayPip orderPayPip;
+	public static enum OrderState {
+		Regist,PrePay,CompletePay,Release
+	}
+	
+	private String orderId;
+	
+	private OrderState orderState;
 
 	public OrderContext() {}
 	
-	public OrderContext(OrderUser orderUser, OrderPayPip orderPayPip) {
-		super();
-		this.orderUser = orderUser;
-		this.orderPayPip = orderPayPip;
+	public String getOrderId() {
+		return orderId;
 	}
 
-	public OrderUser getOrderUser() {
-		return orderUser;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+	
+	public OrderState getOrderState() {
+		return orderState;
 	}
 
-	public void setOrderUser(OrderUser orderUser) {
-		this.orderUser = orderUser;
-	}
-
-	public OrderPayPip getOrderPayPip() {
-		return orderPayPip;
-	}
-
-	public void setOrderPayPip(OrderPayPip orderPayPip) {
-		this.orderPayPip = orderPayPip;
+	public void setOrderState(OrderState orderState) {
+		this.orderState = orderState;
 	}
 }

@@ -1,12 +1,6 @@
 package chkui.spring.cloud.ctx.user.context;
 
-import java.io.Serializable;
-import java.util.Set;
-
-import chkui.spring.cloud.ctx.user.entity.Account;
-import chkui.spring.cloud.ctx.user.entity.Divided;
 import chkui.spring.cloud.ctx.user.entity.PayPip;
-import chkui.spring.cloud.ctx.user.entity.Terminal;
 import chkui.spring.cloud.ctx.user.entity.User;
 
 /**
@@ -15,67 +9,17 @@ import chkui.spring.cloud.ctx.user.entity.User;
  * @author 陈葵
  *
  */
-public class UserContext implements Serializable {
-	private static final long serialVersionUID = 4679384283247777360L;
+public class UserContext{
+	private String id;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	
-	private User user;
-
-	private Set<Account> accounts;
-
-	private Set<Terminal> terminal;
-	
-	private Set<PayPip> payPip;
-	
-	private Set<Divided> divided;
-
-	public UserContext() {}
-	
-	public UserContext(User user,  Set<Account> accounts, Set<Terminal> terminal, Set<PayPip> payPip,
-			Set<Divided> divided) {
-		this.accounts = accounts;
-		this.user = user;
-		this.terminal = terminal;
-		this.payPip = payPip;
-		this.divided = divided;
-	}
-
-	public Set<Account> getAccounts() {
-		return accounts;
-	}
-
-	public void setAccounts(Set<Account> accounts) {
-		this.accounts = accounts;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Set<Terminal> getTerminal() {
-		return terminal;
-	}
-
-	public void setTerminal(Set<Terminal> terminal) {
-		this.terminal = terminal;
-	}
-
-	public Set<PayPip> getPayPip() {
-		return payPip;
-	}
-
-	public void setPayPip(Set<PayPip> payPip) {
-		this.payPip = payPip;
-	}
-
-	public Set<Divided> getDivided() {
-		return divided;
-	}
-
-	public void setDivided(Set<Divided> divided) {
-		this.divided = divided;
-	}
+	public User getUser() {return null;}
+	public PayPip getPayPip(){return null;}
 }

@@ -15,6 +15,9 @@ import chkui.spring.cloud.ctx.user.context.UserContext;
 @FeignClient("user-consumer")
 @RequestMapping(value = "/api/user")
 public interface UserInterface {
+
+	@RequestMapping(value = "/test/{snCode}",method = RequestMethod.GET)
+	String test(@PathVariable("snCode")String snCode);
 	/**
 	 * 
 	 * @param id 

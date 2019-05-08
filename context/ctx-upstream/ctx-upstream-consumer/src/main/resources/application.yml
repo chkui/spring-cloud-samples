@@ -2,7 +2,7 @@ server:
   port: ${server.port}
 spring:
   application: 
-    name: evolution-consumer
+    name: upstream-consumer
     
 eureka:
   client:
@@ -13,6 +13,7 @@ eureka:
     instanceId: ${eureka.instance.appName}-port:${server.port}
     lease-renewal-interval-in-seconds: 1 
     lease-expiration-duration-in-seconds: 2
-consumer-client:
+    
+upstream-consumer:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

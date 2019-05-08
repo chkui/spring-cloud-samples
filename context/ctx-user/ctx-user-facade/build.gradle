@@ -35,6 +35,8 @@ dependencyManagement {
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-feign')
+	compile group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
+	compile group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
 				       	
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile "junit:junit"

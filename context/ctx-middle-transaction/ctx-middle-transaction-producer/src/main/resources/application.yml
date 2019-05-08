@@ -14,3 +14,7 @@ eureka:
     instanceId: ${eureka.instance.appName}-port:${server.port}
     lease-renewal-interval-in-seconds: 1 
     lease-expiration-duration-in-seconds: 2
+    
+ctx-middle-transaction-producer:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

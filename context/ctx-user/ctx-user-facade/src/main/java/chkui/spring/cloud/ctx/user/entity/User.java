@@ -1,7 +1,6 @@
 package chkui.spring.cloud.ctx.user.entity;
 
 import java.io.Serializable;
-import java.util.Set;
 
 /**
  * 用户结构信息

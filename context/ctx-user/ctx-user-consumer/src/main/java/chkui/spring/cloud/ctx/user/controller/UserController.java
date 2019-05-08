@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,11 @@ public class UserController{
 	@Autowired
 	private TerminalCache terminalCache;
 
+	@RequestMapping(value = "/test/{snCode}",method = RequestMethod.GET)
+	String test(@PathVariable("snCode")String snCode) {
+		return "test" + snCode;
+	}
+	
 	@RequestMapping(value = "/sncode/{snCode}",method = RequestMethod.GET)
 	public UserContext getUserBySnCode(String snCode) {
 		return terminalCache.getUserBySnCode(snCode);
@@ -123,8 +129,9 @@ class UserContextCache {
 		divided.add(new Divided(123, Divided.DividedType.percent, 0.08f));
 		User user = new User(id, UserType.merchant, "Alice", "Alice Uepay Des");
 		
-		UserContext ctx = new UserContext(user, accounts, terminal, payPip, divided);
-		
+		//UserContext ctx = new UserContext(user, accounts, terminal, payPip, divided);
+		UserContext ctx = new UserContext();
+		ctx.setId("123");
 		return ctx;
 	}
 }

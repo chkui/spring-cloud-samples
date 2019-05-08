@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import chkui.spring.cloud.ctx.middle.order.config.ProducerConfiguration;
-import chkui.spring.cloud.ctx.order.context.OrderContext;
 import chkui.spring.cloud.ctx.order.dto.OrderDto;
 import chkui.spring.cloud.ctx.order.entity.OrderPayPip;
 import chkui.spring.cloud.ctx.order.entity.OrderUser;
@@ -43,8 +42,9 @@ class InnerConfiguration{
 }
 
 @RestController
-@RequestMapping(value = "/api/order/")
+@RequestMapping(value = "/api/order")
 class OrderProducerController {
+	Logger logger = LoggerFactory.getLogger(OrderProducerController.class);
 	
 	@Autowired
 	private UserInterface userInterface;
@@ -54,22 +54,24 @@ class OrderProducerController {
 
 	@GetMapping("/test")
 	public String test() {
-		return "test";
+		return userInterface.test("123456");
 	}
 	
-	@RequestMapping(value = "/build-order/{snCode}",method = RequestMethod.GET)
-    public OrderContext getOrderInfo(@PathVariable("snCode")String snCode) {
+	@RequestMapping(value = "/register/{snCode}",method = RequestMethod.GET)
+    public String registerOrder(@PathVariable("snCode")String snCode) {
 		UserContext userCtx = userInterface.getUserBySnCode(snCode);
 		User user = userCtx.getUser();
-		PayPip payPip = userCtx.getPayPip().stream().findFirst().get();
+		PayPip payPip = userCtx.getPayPip();
 		
-		OrderUser orderUser = new OrderUser(user.getId(), OrderUser.UserType.valueOf(user.getType().name()), user.getName());
-		OrderPayPip orderPayPip = new OrderPayPip(OrderPayPip.PipType.valueOf(payPip.getPipType().name()), payPip.getPipCode());
+		//OrderUser orderUser = new OrderUser(user.getId(), OrderUser.UserType.valueOf(user.getType().name()), user.getName());
+		//OrderPayPip orderPayPip = new OrderPayPip(OrderPayPip.PipType.valueOf(payPip.getPipType().name()), payPip.getPipCode());
 		
-		OrderDto orderDto = new OrderDto();
-		orderDto.setOrderUser(orderUser);
-		orderDto.setOrderPayPip(orderPayPip);
+		//OrderDto orderDto = new OrderDto();
+		//orderDto.setOrderUser(orderUser);
+		//orderDto.setOrderPayPip(orderPayPip);
 		
-        return orderInterface.addOrder(orderDto);
+		logger.info("對業務數據進行轉換!");
+		
+        return orderInterface.addOrder(new OrderDto());
     }
 }
