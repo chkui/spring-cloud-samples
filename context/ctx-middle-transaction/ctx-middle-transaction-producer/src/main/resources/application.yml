@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ctx-middle-producer
+    name: ctx-middle-transaction-producer
 
 eureka:
   client:

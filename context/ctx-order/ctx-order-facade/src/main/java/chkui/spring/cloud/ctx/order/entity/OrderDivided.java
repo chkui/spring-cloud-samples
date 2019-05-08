@@ -1,4 +1,4 @@
-package chkui.spring.cloud.ctx.user.entity;
+package chkui.spring.cloud.ctx.order.entity;
 
 import java.io.Serializable;
 

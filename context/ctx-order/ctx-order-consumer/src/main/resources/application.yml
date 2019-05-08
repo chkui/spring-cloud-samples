@@ -2,7 +2,7 @@ server:
   port: ${server.port}
 spring:
   application: 
-    name: evolution-consumer
+    name: order-consumer
     
 eureka:
   client:

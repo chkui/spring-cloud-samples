@@ -1,9 +1,9 @@
 server:
-  port: 8110
+  port: 8111
 
 spring:
   application:
-    name: ctx-middle-producer
+    name: ctx-middle-order-producer
 
 eureka:
   client:

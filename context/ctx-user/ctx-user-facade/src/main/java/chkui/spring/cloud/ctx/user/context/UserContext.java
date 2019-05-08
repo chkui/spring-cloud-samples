@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 import chkui.spring.cloud.ctx.user.entity.Account;
-import chkui.spring.cloud.ctx.user.entity.OrderDivided;
+import chkui.spring.cloud.ctx.user.entity.Divided;
 import chkui.spring.cloud.ctx.user.entity.PayPip;
 import chkui.spring.cloud.ctx.user.entity.Terminal;
 import chkui.spring.cloud.ctx.user.entity.User;
@@ -26,12 +26,12 @@ public class UserContext implements Serializable {
 	
 	private Set<PayPip> payPip;
 	
-	private Set<OrderDivided> divided;
+	private Set<Divided> divided;
 
 	public UserContext() {}
 	
 	public UserContext(User user,  Set<Account> accounts, Set<Terminal> terminal, Set<PayPip> payPip,
-			Set<OrderDivided> divided) {
+			Set<Divided> divided) {
 		this.accounts = accounts;
 		this.user = user;
 		this.terminal = terminal;
@@ -71,11 +71,11 @@ public class UserContext implements Serializable {
 		this.payPip = payPip;
 	}
 
-	public Set<OrderDivided> getDivided() {
+	public Set<Divided> getDivided() {
 		return divided;
 	}
 
-	public void setDivided(Set<OrderDivided> divided) {
+	public void setDivided(Set<Divided> divided) {
 		this.divided = divided;
 	}
 }

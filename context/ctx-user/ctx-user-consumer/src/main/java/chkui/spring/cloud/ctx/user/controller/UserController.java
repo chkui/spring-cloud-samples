@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import chkui.spring.cloud.ctx.user.context.UserContext;
 import chkui.spring.cloud.ctx.user.entity.Account;
-import chkui.spring.cloud.ctx.user.entity.OrderDivided;
-import chkui.spring.cloud.ctx.user.entity.OrderDivided.DividedType;
+import chkui.spring.cloud.ctx.user.entity.Divided;
 import chkui.spring.cloud.ctx.user.entity.PayPip;
 import chkui.spring.cloud.ctx.user.entity.Terminal;
 import chkui.spring.cloud.ctx.user.entity.User;
@@ -28,12 +27,12 @@ public class UserController{
 	@Autowired
 	private TerminalCache terminalCache;
 
-	@RequestMapping(value = "/getUserbySnCode/{snCode}",method = RequestMethod.GET)
+	@RequestMapping(value = "/sncode/{snCode}",method = RequestMethod.GET)
 	public UserContext getUserBySnCode(String snCode) {
 		return terminalCache.getUserBySnCode(snCode);
 	}
 
-	@RequestMapping(value = "/getUserByUserId/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/userid/{id}",method = RequestMethod.GET)
 	public UserContext getUserByUserId(Long userId) {
 		return userCache.getUserById(userId);
 	}
@@ -120,8 +119,8 @@ class UserContextCache {
 		payPip.add(new PayPip(PayPip.PipType.creditCard, "12345678"));
 		Set<Terminal> terminal = new HashSet<Terminal>();
 		terminal.add(new Terminal("SN12345", "广州", 123456L));
-		Set<OrderDivided> divided = new HashSet<OrderDivided>();
-		divided.add(new OrderDivided(123, DividedType.percent, 0.08f));
+		Set<Divided> divided = new HashSet<Divided>();
+		divided.add(new Divided(123, Divided.DividedType.percent, 0.08f));
 		User user = new User(id, UserType.merchant, "Alice", "Alice Uepay Des");
 		
 		UserContext ctx = new UserContext(user, accounts, terminal, payPip, divided);
