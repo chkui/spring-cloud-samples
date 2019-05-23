@@ -18,8 +18,8 @@ public class OrderConsumerApplication {
 		try {
 			ServerSocket serverSocket = new ServerSocket(0);
 			int port = serverSocket.getLocalPort();
-			System.setProperty("server.port", String.valueOf(port));
 			serverSocket.close();
+			System.setProperty("server.port", String.valueOf(port));
 			SpringApplication.run(OrderConsumerApplication.class, args);
 		} catch (IOException e) {
 			logger.error("获取IP地址冲突!", e);

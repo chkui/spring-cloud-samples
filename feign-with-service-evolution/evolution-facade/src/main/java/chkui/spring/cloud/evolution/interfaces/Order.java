@@ -19,6 +19,6 @@ public interface Order {
 	 * @param id 要获取的订单对应的id
 	 * @return
 	 */
-	@RequestMapping(value = "/transaction/getOrder/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/transaction/getOrder/{id}",method = RequestMethod.GET， consumer= pr)
 	OrderBase getOrder(@PathVariable("id")Long id);
 }

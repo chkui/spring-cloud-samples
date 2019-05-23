@@ -19,8 +19,6 @@ import chkui.spring.cloud.ctx.middle.transction.config.TransactionProducerConfig
 import chkui.spring.cloud.ctx.order.context.OrderContext;
 import chkui.spring.cloud.ctx.order.interfaces.OrderInterface;
 import chkui.spring.cloud.ctx.transaction.interfaces.TransactionInterface;
-import chkui.spring.cloud.ctx.user.context.UserContext;
-import chkui.spring.cloud.ctx.user.interfaces.UserInterface;
 
 @EnableEurekaClient
 @SpringBootApplication
@@ -43,9 +41,6 @@ class InnerConfiguration{
 class TransactionController {
 	
 	@Autowired
-	private UserInterface userInterface;
-	
-	@Autowired
 	private OrderInterface orderInterface;
 	
 	@Autowired
@@ -55,12 +50,6 @@ class TransactionController {
 	public String test() {
 		return "test";
 	}
-	
-	@RequestMapping(value = "/getUser/{snCode}",method = RequestMethod.GET)
-    public UserContext getOrderInfo(@PathVariable("snCode")String snCode) {
-		UserContext user = userInterface.getUserBySnCode(snCode);
-        return user;
-    }
 	
 	/**
 	 * 

@@ -63,12 +63,12 @@ class OrderProducerController {
 		User user = userCtx.getUser();
 		PayPip payPip = userCtx.getPayPip();
 		
-		//OrderUser orderUser = new OrderUser(user.getId(), OrderUser.UserType.valueOf(user.getType().name()), user.getName());
-		//OrderPayPip orderPayPip = new OrderPayPip(OrderPayPip.PipType.valueOf(payPip.getPipType().name()), payPip.getPipCode());
-		
-		//OrderDto orderDto = new OrderDto();
-		//orderDto.setOrderUser(orderUser);
-		//orderDto.setOrderPayPip(orderPayPip);
+//		OrderUser orderUser = new OrderUser(user.getId(), OrderUser.UserType.valueOf(user.getType().name()), user.getName());
+//		OrderPayPip orderPayPip = new OrderPayPip(OrderPayPip.PipType.valueOf(payPip.getPipType().name()), payPip.getPipCode());
+//		
+//		OrderDto orderDto = new OrderDto();
+//		orderDto.setOrderUser(orderUser);
+//		orderDto.setOrderPayPip(orderPayPip);
 		
 		logger.info("對業務數據進行轉換!");
 		
